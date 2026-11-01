@@ -1,0 +1,21 @@
+{
+  "name": "leo-crucis",
+  "version": "0.1.17",
+  "private": true,
+  "description": "Bibliotheek Leo Crucis — offline kennisbibliotheek",
+  "scripts": {
+    "tauri": "tauri",
+    "bump": "node tools/bump-version.mjs",
+    "bump:minor": "node tools/bump-version.mjs minor",
+    "bump:major": "node tools/bump-version.mjs major",
+    "dev": "node tools/build-search-index.mjs && tauri dev",
+    "build": "node tools/bump-version.mjs && node tools/build-search-index.mjs && tauri build",
+    "build:nobump": "node tools/build-search-index.mjs && tauri build",
+    "web": "python3 -m http.server 8080 --directory src",
+    "index": "node tools/build-search-index.mjs",
+    "ai-zip": "node tools/make-ai-zip.mjs"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}
